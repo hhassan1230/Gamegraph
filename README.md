@@ -1,5 +1,7 @@
 # Gamegraph
 
+http://www.giantbomb.com/api/platforms?api_key=[KEYHERE]&format=json
+
 ## Description
 
 Add a short description of your app.

@@ -1,0 +1,35 @@
+<svg width="720" height="600">
+</svg>
+
+<p></p>
+
+<script type="text/javascript">
+	var data = d3.json("example.json", function(error, data){
+		console.log("I'm working");
+		console.log(data);
+		var svg = d3.select("svg");
+		console.log(data.length);
+		for (i = 0; i < data.length; i ++) {
+			svg.append("circle")
+				.attr("cx", Math.random()*500)
+				.attr("cy", Math.random()*500)
+				.attr("r", 25)
+				.attr("fill", "red")
+				.append("text")
+				.text(function(d) { return data[i].name } )
+				.attr('dx', function(d) {return '1em';})
+        .attr('dy', function(d) {return (0.08*this.parentNode.getBBox().height/2 + 0.5)+'em';})
+
+    //         .attr('dy', function(d) {return (0.08*this.parentNode.getBBox().height/2 + 0.5)+'em';})
+				// node.append('text')
+    //         .text(function(d) {return d.nickname ? d.nickname : d.name;})
+    //         .attr('dx', function(d) {return (-0.065*this.getComputedTextLength()/2)+'em';})
+    //         .attr('dy', function(d) {return (0.08*this.parentNode.getBBox().height/2 + 0.5)+'em';})
+
+
+		}
+		svg.selectAll("circle").attr("fill", "red");
+		svg.selectAll("text").attr("fill", "black")
+	})
+
+</script>

@@ -40,3 +40,5 @@ Link to your blog, twitter, etc!
 ## License
 
 Gamegraph is MIT Licensed. See LICENSE for details.
+=======
+Visualization of games and ratings

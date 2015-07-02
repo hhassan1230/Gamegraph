@@ -5,6 +5,7 @@ class GraphController < ApplicationController
   	# json = JSON.parse(open())
   	api = "http://www.giantbomb.com/api/games?api_key=ca6c74e6ef573cb76ea48c4c06d6e47be6cdc13e&format=json&sort=number_of_user_reviews:desc&field_list=name,platforms"
   	game_json = JSON.load(open(api))
+    @games_data = game_json
   	@consoles_array = get_consoles(game_json)
     @consoles_array.delete("PlayStation Network (PS3)")
     @consoles_array.delete("PlayStation Network (Vita)")
@@ -13,7 +14,12 @@ class GraphController < ApplicationController
   	@final_hash["name"] = "game"
   	@final_hash["children"] = []
   	make_consoles
-  	binding.pry
+  	# binding.pry
+    
+    @consoles_array.each do |console|
+
+    end
+    File.open('public/game.json', 'w') { |file| file.write(@final_hash) }
   end
 
   def game
@@ -28,17 +34,38 @@ class GraphController < ApplicationController
   	end
   		array.uniq
   end
-  def make_consoles
-  	company_hash = {}
-  	@consoles_array.each do |da_console|
-  		i = 0
 
+  def place_games(console)
+    @games_data["results"].each do |game_hash|
+      # binding.pry
+      in_console = false
+      game_hash["platforms"].each do |platform_hash|
+        if platform_hash["name"] == console
+          in_console = true
+          break
+        end
+      end
+      if in_console
+        gamer << game_hash["name"]
+      end
+      # iterate through each game
+      # see if the game belongs to current console
+      # if game belongs put game name in hash with score from ign api 
+
+    end 
+    binding.pry
+  end
+  def make_consoles
+    company_hash = {}
+    @consoles_array.each do |da_console|
+      i = 0
   		@final_hash["children"] << {
   			"name": da_console,
   			"children": [
   				{
   					"name": "great games",
   					"children": [
+              # put iterated game 
   						{"name": "game #{i.to_s}", "size": rand(800..1000)},
   						{"name": "game #{i.to_s}", "size": rand(800..1000)}
   					]
@@ -92,6 +119,6 @@ class GraphController < ApplicationController
   #   }
   #  ]
   # }
-  binding.pry
+  # binding.pry
   end
 end

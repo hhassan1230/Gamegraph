@@ -1,0 +1,22 @@
+[
+	{
+		"name": "God of war",
+		"platforms": ["PS3"]
+	},
+	{
+		"name": "Not Super Mario",
+		"platforms": ["PS3", "Xbox", "Wii"]
+	},
+	{
+		"name": "GTA",
+		"platforms": ["PS3", "Xbox"]
+	},
+	{
+		"name": "Assin. Creed",
+		"platforms": ["PS3", "Xbox", "Wii"]
+	},
+	{
+		"name": "Garden Adventures",
+		"platforms": ["Wii"]
+	}
+]

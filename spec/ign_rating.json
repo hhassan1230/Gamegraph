@@ -1,0 +1,27 @@
+{
+  "code": 200,
+  "headers": {
+    "cache_control": "no-cache, must-revalidate",
+    "content_type": "application/json",
+    "date": "Sat, 25 Jul 2015 19:37:23 GMT",
+    "server": "Mashape/5.0.6",
+    "x_powered_by": "PHP/5.3.3",
+    "content_length": "422",
+    "connection": "keep-alive"
+  },
+  "raw_body": "[{\"title\":\"Grand Theft Auto IV\",\"score\":\"10\",\"publisher\":\"Rockstar Games\",\"short_description\":\"April 29, 2008 - GTA IV reinvents the series with a renewed version of Liberty City detailed to the last pothole and rooftop vent. There are now four boroughs to explore...\",\"platforms\":{\"1\":\"Xbox 360\",\"2\":\"PS3\",\"3\":\"PC\"},\"thumb\":\"http:\\/\\/media.ign.com\\/games\\/image\\/object\\/827\\/827005\\/GTAIV_360_FOB_FINALboxart_160w.jpg\"}]",
+  "body": [
+    {
+      "title": "Grand Theft Auto IV",
+      "score": "10",
+      "publisher": "Rockstar Games",
+      "short_description": "April 29, 2008 - GTA IV reinvents the series with a renewed version of Liberty City detailed to the last pothole and rooftop vent. There are now four boroughs to explore...",
+      "platforms": {
+        "1": "Xbox 360",
+        "2": "PS3",
+        "3": "PC"
+      },
+      "thumb": "http://media.ign.com/games/image/object/827/827005/GTAIV_360_FOB_FINALboxart_160w.jpg"
+    }
+  ]
+}
